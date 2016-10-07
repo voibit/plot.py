@@ -96,6 +96,7 @@ else :
 # sett grensene
 plt.axis(grenser)
 
+#gir antall akser
 antAkser=len(akse);
 # Plot alle radene radene (y- veridene)
 for i in range(antAkser)[1:]:
