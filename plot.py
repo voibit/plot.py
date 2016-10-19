@@ -85,12 +85,20 @@ elif len(x) == 0:
 	print ("GRAF.PY: "+filnavn+" har ikke gyldig data")
 	exit()
 
+plt.figure(figsize=(9,6), dpi=80)
+#setter vinustittel
+fig = plt.gcf()
+fig.canvas.set_window_title("plot.py: "+filnavn)
+#setter 
+plt.title(filnavn, fontsize=20)
 
 #Sette navnet på x aksen (første verdi i data)
 plt.xlabel(akse[0][0])
-#setter vinustittel
-fig = plt.gcf()
-fig.canvas.set_window_title(filnavn)
+plt.ylabel("vedi")
+if plt.get_backend().lower() in ['agg', 'macosx']:
+    fig.set_tight_layout(True)
+else:
+    fig.tight_layout()
 # xmin, xmax ymin ymax
 # hvis grense skal beregnes fra data.
 if grenseFraData == 1:
