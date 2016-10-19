@@ -32,10 +32,8 @@ if len(sys.argv) == 3:
 with open(filnavn) as f:
     linjer = f.readlines()
 
-#fjerner overflødige mellomrom dersom filen er mellomromseparart 
-if separator==' ': 
-	for linje in linjer: 
-		' '.join(linje.split())
+
+
 
 #initialiserer aksene og min og maksverdier
 akse=[]
@@ -50,7 +48,15 @@ if len(linjer)< 2:
 #Gjor om til en liste med linjer til akser med data.
 for linjenr, linje in enumerate(linjer) :
 	#behandler kolonne i rad
-	for kolnr, kolonne in enumerate(linje.split(separator)) : 
+
+	#fjerner overflødige mellomrom dersom filen er mellomromseparart 
+	if separator==' ': 
+		linje=linje.split()
+	#beholder de dersom separert av noe annet
+	else:
+		linje=linje.split(separator)
+
+	for kolnr, kolonne in enumerate(linje) : 
 
 		#hopper over overskrifsrad
 		if linjenr == 0:
