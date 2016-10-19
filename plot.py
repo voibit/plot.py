@@ -45,7 +45,7 @@ if len(linjer)< 2:
 #Gjor om til en liste med linjer til akser med data.
 for linjenr, linje in enumerate(linjer) :
 	#behandler kolonne i rad
-	for kolnr, kolonne in enumerate(linje.rsplit(separator)) : 
+	for kolnr, kolonne in enumerate(linje.split()) : 
 
 		#hopper over overskrifsrad
 		if linjenr == 0:
